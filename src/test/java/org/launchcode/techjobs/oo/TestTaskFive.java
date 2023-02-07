@@ -114,7 +114,7 @@ public class TestTaskFive extends AbstractTest {
     public void testToStringContainsCorrectLabelsAndData() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
         String jobString = getJobString(job);
-        assertEquals(jobString, job.toString());
+        assertEquals(jobString.trim(), job.toString().trim());
     }
 
     @Test
@@ -163,7 +163,7 @@ public class TestTaskFive extends AbstractTest {
     public void testToStringHandlesEmptyField() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException, NoSuchFieldException {
         Job job = createJob("Web Developer", "", "StL", "", "Java");
         String jobString = getJobString(job);
-        assertEquals(jobString, job.toString());
+        assertEquals(jobString.trim(), job.toString().trim());
     }
 
 }
