@@ -14,46 +14,33 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-//    public Job() {
-//this.id = Job();
-//    }
-
-
-
-
-    public Job(){
+    public Job() {
         id = nextId;
-       nextId++;
+        nextId++;
     }
 
-    public Job(String name, Employer Employer, Location Location, PositionType PositionType, CoreCompetency CoreCompetency ) {
-this();
-//        this.id = Job();
+    public Job(String name, Employer Employer, Location Location, PositionType PositionType,
+            CoreCompetency CoreCompetency) {
+        this();
+
         this.name = name;
         this.employer = Employer;
         this.location = Location;
         this.positionType = PositionType;
         this.coreCompetency = CoreCompetency;
 
-
     }
-
-
-
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
-
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
-
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer)
+                && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType)
+                && Objects.equals(coreCompetency, job.coreCompetency);
     }
 
     @Override
@@ -61,18 +48,15 @@ this();
         return Objects.hash(id);
     }
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-
     // getters
     public int getId() {
         return id;
     }
 
-
     public String getName() {
         return name;
     }
+
     public Employer getEmployer() {
         return employer;
     }
@@ -114,10 +98,20 @@ this();
     public String toString() {
         String result = "\nID: " + id + "\n";
         result += "Name: " + (name == null || name.equals("") ? "Data not available" : name) + "\n";
-        result += "Employer: " + (employer == null || this.employer.toString().equals("") ? "Data not available" : employer.toString()) + "\n";
-        result += "Location: " + (location == null || this.location.toString().equals("") ? "Data not available" : location.toString()) + "\n";
-        result += "Position Type: " + (positionType == null || this.positionType.toString().equals("") ? "Data not available" : positionType.toString()) + "\n";
-        result += "Core Competency: " + (coreCompetency == null || this.coreCompetency.toString().equals("") ? "Data not available" : coreCompetency.toString()) + "\n";
+        result += "Employer: "
+                + (employer == null || this.employer.toString().equals("") ? "Data not available" : employer.toString())
+                + "\n";
+        result += "Location: "
+                + (location == null || this.location.toString().equals("") ? "Data not available" : location.toString())
+                + "\n";
+        result += "Position Type: "
+                + (positionType == null || this.positionType.toString().equals("") ? "Data not available"
+                        : positionType.toString())
+                + "\n";
+        result += "Core Competency: "
+                + (coreCompetency == null || this.coreCompetency.toString().equals("") ? "Data not available"
+                        : coreCompetency.toString())
+                + "\n";
         return result + "\n";
     }
 }
